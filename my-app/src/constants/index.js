@@ -3,7 +3,7 @@ export const servicesData = [
   {
     title: "FullStack Development",
     description:
-      "Your business deserves a fast, secure, and future-proof digital foundation. I develop custom web apps with clean architecture, optimized databases, and seamless integrations—ensuring reliability at every layer.",
+      "Experienced in React and WordPress, I create dynamic, responsive, and scalable websites, handling everything from backend architecture and database management to polished frontend interfaces. I focus on clean, maintainable code, seamless user experiences, and efficient deployment workflows",
     items: [
       {
         title: "Backend Engineering",
@@ -20,58 +20,58 @@ export const servicesData = [
     ],
   },
   {
-    title: "DevOps & Cloud Solutions",
+    title: "SEO & Performance Optimization",
     description:
-      "Deploying software shouldn't be a gamble. I automate infrastructure, enforce security, and leverage cloud platforms (AWS/Azure) to keep your app running smoothly—24/7, at any scale.",
+      "Websites are built to perform—fast, discoverable, and user-friendly. Semantic HTML, structured data, responsive design, and optimized loading ensure better search engine rankings and a seamless user experience. Every project emphasizes discoverability, accessibility, and long-term growth.",
     items: [
       {
-        title: "CI/CD Pipelines",
+        title: "Search Engine Optimization",
         description: "(GitHub Actions, Docker, Kubernetes)",
       },
       {
-        title: "Server Management ",
+        title: "Performance & Speed Optimization ",
         description: "(Linux, Nginx, Load Balancing)",
       },
       {
-        title: "Performance Tuning",
+        title: "Accessibility & Discoverability",
         description: "(Caching, Compression, Lighthouse 90+ Scores)",
       },
     ],
   },
   {
-    title: "Security & Optimization",
+    title: "Social Media Management",
     description:
-      "Slow or hacked apps destroy trust. I harden security (XSS/SQLI protection, OAuth) and optimize bottlenecks so your app stays fast, safe, and scalable as you grow.",
+      "Strategic content planning, scheduling, and optimization across platforms to build engagement, grow audiences, and strengthen brand presence. Campaigns focus on consistency, performance metrics, and meaningful interactions to drive results",
     items: [
       {
-        title: "Code Audits",
+        title: "Content Strategy & Planning",
         description: "(Refactoring, Tech Debt Cleanup)",
       },
       {
-        title: "Pen Testing",
+        title: "Audience Engagement",
         description: "(Vulnerability Assessments)",
       },
       {
-        title: "SEO Tech Stack",
+        title: "Performance Tracking & Analytics",
         description: "(SSR, Metadata, Structured Data)",
       },
     ],
   },
   {
-    title: "Web & Mobile Apps",
+    title: "Digital Art",
     description:
-      "A clunky interface can sink even the best ideas. I craft responsive, pixel perfect web and mobile apps (React Native/Flutter) that users love—bridging design and functionality seamlessly.",
+      "Creating expressive digital artwork using Procreate and other digital tools. Focused on concept design, illustration, and visual storytelling to bring ideas to life with creativity and precision.",
     items: [
       {
-        title: "Cross-Platform Apps",
+        title: "Illustration & Concept Art",
         description: "(Single codebase for iOS/Android/Web)",
       },
       {
-        title: "PWAs",
+        title: "Character & Environment Design",
         description: "(Offline mode, Push Notifications)",
       },
       {
-        title: "E-Commerce",
+        title: "Digital Storytelling & Visuals",
         description: "(Checkout flows, Payment Gateways, Inventory APIs)",
       },
     ],
@@ -80,23 +80,23 @@ export const servicesData = [
 export const projects = [
   {
     id: 1,
-    name: "Mobile Accessories E-commerce",
+    name: "SBTONES.COM",
     description:
       "An online store specializing in phone accessories including cases, chargers, cables, and power banks with MagSafe compatibility.",
     href: "",
-    image: "/assets/projects/mobile-accessories-store.jpg",
+    image: "/assets/projects/sbtones.png",
     bgImage: "/assets/backgrounds/blanket.jpg",
     frameworks: [
-      { id: 1, name: "React" },
-      { id: 2, name: "Next.js" },
-      { id: 3, name: "Node.js" },
-      { id: 4, name: "MongoDB" },
-      { id: 5, name: "Tailwind CSS" },
+      { id: 1, name: "Wordpress" },
+      { id: 2, name: "Custom Plugins" },
+      { id: 3, name: "Woocommerce" },
+      { id: 4, name: "Hosting" },
+      { id: 5, name: "Deployment" },
     ],
   },
   {
     id: 2,
-    name: "Plant Shop E-commerce",
+    name: "CHARACTER CREATION",
     description:
       "An online store specializing in rare and decorative plants with a clean, user-friendly interface.",
     href: "",
@@ -171,11 +171,11 @@ export const projects = [
   },
 ];
 export const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/ali.sanatidev/reels/" },
+  { name: "Instagram", href: "https://www.instagram.com/merethyl_" },
   {
     name: "Youtube",
-    href: "https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA",
+    href: "",
   },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/ali-sanati/" },
-  { name: "GitHub", href: "https://github.com/Ali-Sanati" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/sila-taku" },
+  { name: "GitHub", href: "https://github.com/SILATAKU2" },
 ];
