@@ -8,19 +8,27 @@ import About from './sections/About';
 import Works from './sections/Works';
 import ContactSummary from './sections/ContactSummary';
 import Contact from './sections/Contact';
+import CursorTrail from "./components/CursorTrail"; 
+import "@fontsource/sawarabi-mincho"; 
+
+
+
 
 const App = () => {
   return (
-    <ReactLenis root className="relative w-screen min-h-screen overflow-x-auto">
-      <Navbar />
-      <Hero />
-      <ServiceSummary />
-      <Services />
-      <About />
-      <Works/>
-      <ContactSummary/>
-      <Contact/>
-      </ReactLenis>
+    <>
+  <CursorTrail /> 
+  <ReactLenis root className="relative w-screen min-h-screen overflow-x-auto">
+    <Navbar />
+    <Hero />
+    <ServiceSummary />
+    <Services />
+    <About />
+    <Works />
+    <ContactSummary />
+    <Contact />
+  </ReactLenis>
+</>
   );
 };
 

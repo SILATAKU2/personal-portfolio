@@ -6,6 +6,7 @@ import { Link } from "react-scroll";
 const Navbar = () => {
   const navRef = useRef(null);
   const linksRef = useRef([]);
+  const spansRef = useRef([]); // <span> inside each link for scramble
   const contactRef = useRef(null);
   const topLineRef = useRef(null);
   const bottomLineRef = useRef(null);
@@ -13,6 +14,27 @@ const Navbar = () => {
   const iconTl = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
   const [showBurger, setShowBurger] = useState(true);
+
+  // Japanese characters
+  const japaneseChars =
+    "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん";
+  const getRandomChar = () => japaneseChars[Math.floor(Math.random() * japaneseChars.length)];
+
+  // Scramble animation
+  const scrambleText = (element, finalText, duration = 2) => {
+    const chars = finalText.split("");
+    let start = 0;
+    const step = () => {
+      start += 1 / (60 * duration);
+      const output = chars
+        .map((char, i) => (start >= i / chars.length ? char : getRandomChar()))
+        .join("");
+      element.textContent = output;
+      if (start < 1) requestAnimationFrame(step);
+      else element.textContent = finalText;
+    };
+    step();
+  };
 
   // GSAP setup
   useEffect(() => {
@@ -27,11 +49,7 @@ const Navbar = () => {
         { autoAlpha: 1, x: 0, stagger: 0.1, duration: 0.5, ease: "power2.out" },
         "<"
       )
-      .to(
-        contactRef.current,
-        { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out" },
-        "<+0.2"
-      );
+      .to(contactRef.current, { autoAlpha: 1, x: 0, duration: 0.5, ease: "power2.out" }, "<+0.2");
 
     iconTl.current = gsap
       .timeline({ paused: true })
@@ -51,7 +69,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Toggle menu animation
+  // Toggle menu
   const toggleMenu = () => {
     if (isOpen) {
       tl.current.reverse();
@@ -59,9 +77,18 @@ const Navbar = () => {
     } else {
       tl.current.play();
       iconTl.current.play();
+
+      // Scramble each <span> inside links
+      spansRef.current.forEach((spanEl, i) => {
+        setTimeout(() => {
+          scrambleText(spanEl, spanEl.dataset.text, 2);
+        }, i * 200);
+      });
     }
     setIsOpen(!isOpen);
   };
+
+  const sections = ["home", "services", "about", "work", "contact"];
 
   return (
     <>
@@ -71,20 +98,26 @@ const Navbar = () => {
         className="fixed z-50 flex flex-col justify-between w-full h-full px-10 uppercase bg-black text-white/80 py-28 gap-y-10 md:w-1/2 md:left-1/2"
       >
         <div className="flex flex-col text-5xl gap-y-2 md:text-6xl lg:text-8xl">
-          {["home", "services", "about", "work", "contact"].map((section, index) => (
-            <div key={index} ref={(el) => (linksRef.current[index] = el)}>
-              <Link
-                className="transition-all duration-300 cursor-pointer hover:text-white"
-                to={`${section}`}
-                smooth
-                offset={0}
-                duration={2000}
-              >
-                {section}
-              </Link>
-            </div>
-          ))}
-        </div>
+  {sections.map((section, index) => (
+    <div key={index} ref={(el) => (linksRef.current[index] = el)}>
+      <Link
+        className="transition-all duration-300 cursor-pointer hover:text-white"
+        to={section}
+        smooth
+        offset={0}
+        duration={2000}
+      >
+        <span
+          ref={(el) => (spansRef.current[index] = el)}
+          data-text={section}
+        >
+          {section}
+        </span>
+      </Link>
+    </div>
+  ))}
+</div>
+
 
         <div ref={contactRef} className="flex flex-col flex-wrap justify-between gap-8 md:flex-row">
           <div className="font-light">
