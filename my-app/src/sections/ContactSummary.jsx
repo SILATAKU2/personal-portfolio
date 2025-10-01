@@ -7,7 +7,7 @@ import BackgroundModel from "../components/BackgroundModel";
 const ContactSummary = () => {
   const containerRef = useRef(null);
 
-  const items = ["Innovation", "Precision", "Trust", "Collaboration", "Excellence"];
+  const items = ["Focus", "Precision", "Trust", "Balance", "Flow"];
   const items2 = ["contact us", "contact us", "contact us", "contact us", "contact us"];
 
   // GSAP ScrollTrigger

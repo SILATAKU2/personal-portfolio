@@ -98,7 +98,12 @@ const Works = () => {
   };
 
   return (
-    <section id="work" className="flex flex-col min-h-screen">
+    <section
+      id="work"
+      className="relative flex flex-col min-h-screen 
+                 bg-[#fdfcf7] 
+                 [background-image:repeating-linear-gradient(45deg,rgba(0,0,0,0.03)_0,rgba(0,0,0,0.03)_1px,transparent_1px,transparent_4px),radial-gradient(circle_at_top_left,rgba(0,0,0,0.05),transparent_50%)]"
+    >
       <AnimatedHeaderSection
         subTitle={"Logic meets Aesthetics, Seamlessly"}
         title={"Works"}
@@ -161,7 +166,7 @@ const Works = () => {
             </div>
           </div>
         ))}
-        {/* desktop Flaoting preview image */}
+        {/* desktop Floating preview image */}
         <div
           ref={previewRef}
           className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[960px] md:block hidden opacity-0"
